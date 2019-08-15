@@ -1,0 +1,21 @@
+{
+  "name": "ESP32_Makey",
+  "version": "0.9.1",
+  "keywords": "tft, ePaper, display, ESP32, WiFi, Makey, Bluetooth, Handle, ST7789",
+  "description": "A wireless makey handle module base on ESP32, support WiFi and Bluetooth mode.",
+  "repository":
+  {
+    "type": "git",
+    "url": "https://github.com/Afantor/ESP32_Makey"
+  },
+  "authors":
+  [
+    {
+        "name": "Afantor",
+        "email": "afantor.go@gmail.com",
+        "maintainer": true
+    }
+  ],
+  "frameworks": "arduino",
+  "platforms": "espressif32"
+}

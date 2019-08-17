@@ -49,8 +49,8 @@ Copyright (c) 2019 Afantor
 #define BUTTON_SET_PIN 		0
 
 //Joystick XY and Potentiometer
-#define JOY_LX_PIN 		32
-#define JOY_LY_PIN 		33
+#define JOY_LX_PIN 		33
+#define JOY_LY_PIN 		32
 #define JOY_RX_PIN 		35
 #define JOY_RY_PIN 		34
 #define POT_L_PIN 		39

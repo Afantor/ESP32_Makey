@@ -131,7 +131,8 @@ void Makey32::update() {
   BtnMode.read();
   BtnStart.read();
   BtnSet.read();
-
+  //Analog pin update
+  
 }
 
 /**

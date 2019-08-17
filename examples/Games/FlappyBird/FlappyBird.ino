@@ -4,9 +4,9 @@
 #include <Makey32.h>
 #include <EEPROM.h>
 
-#define TFTW            320     // screen width
+#define TFTW            240     // screen width
 #define TFTH            240     // screen height
-#define TFTW2           160     // half screen width
+#define TFTW2           120     // half screen width
 #define TFTH2           120     // half screen height
 // game constant
 #define SPEED             1
@@ -28,7 +28,7 @@
 #define GRASSH            4     // grass height (inside floor, starts at floor y)
 
 int maxScore = 0;
-const int buttonPin = 2;     
+const int buttonPin = 0;     
 // background
 const unsigned int BCKGRDCOL = Makey.Lcd.color565(138,235,244);
 // bird
@@ -92,8 +92,8 @@ static short tmpx, tmpy;
 
 void setup() {
   // put your setup code here, to run once:
-Makey.begin();
-resetMaxScore();
+  Makey.begin();
+  resetMaxScore();
 
 }
 
@@ -143,7 +143,7 @@ void game_loop() {
       // ===============
       // input
       // ===============
-      if (Makey.BtnStart.wasPressed()) {
+      if (Makey.BtnSet.wasPressed()) {
         // if the bird is not too close to the top of the screen apply jump force
         if (bird.y > BIRDH2*0.5) bird.vel_y = -JUMP_FORCE;
         // else zero velocity
@@ -289,7 +289,7 @@ void game_start() {
   Makey.Lcd.println("Premi il bottone centrale");
   while (1) {
     // wait for push button
-      if(Makey.BtnStart.wasPressed()) {
+      if(Makey.BtnSet.wasPressed()) {
         break;
       }
     Makey.update();
@@ -350,7 +350,7 @@ void game_over() {
   Makey.Lcd.print(maxScore);
   while (1) {
     // wait for push button
-      if(Makey.BtnStart.wasPressed()) {
+      if(Makey.BtnSet.wasPressed()) {
         break;
       }
     Makey.update();

@@ -30,7 +30,7 @@ void setup() {
   Serial.begin(115200);
   Serial.println("Starting BLE work!");
   // Create the BLE Device
-  BLEDevice::init("Long name works now");
+  BLEDevice::init("Makey2");
   //将BLE设备设置为服务器
   BLEServer *pServer = BLEDevice::createServer();
   //使用之前定义的UUID为BLE服务器创建服务

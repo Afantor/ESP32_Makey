@@ -12,11 +12,12 @@ void setup() {
   Makey.Lcd.clear(BLACK);
   Makey.Lcd.setTextColor(YELLOW);
   Makey.Lcd.setTextSize(2);
-  Makey.Lcd.setCursor(65, 10);
-  Makey.Lcd.println("Button example");
-  Makey.Lcd.setCursor(3, 35);
-  Makey.Lcd.println("Press button START for 700ms");
-  Makey.Lcd.println("to clear screen.");
+  Makey.Lcd.setCursor(0, 24);
+  Makey.Lcd.println("Button Test");
+  Makey.Lcd.setCursor(0, 60);
+  Makey.Lcd.println("Press BTN Set");
+  Makey.Lcd.println("for 700ms to");
+  Makey.Lcd.println("clear screen.");
   Makey.Lcd.setTextColor(RED);
 }
 
@@ -29,14 +30,14 @@ void loop() {
     Makey.Lcd.print('L');
   } else if (Makey.BtnR.wasReleased()) {
     Makey.Lcd.print('R');
-  } else if (Makey.BtnMODE.wasReleased()) {
-    Makey.Lcd.print('MODE');
-  }else if (Makey.BtnSTART.wasReleased()) {
-    Makey.Lcd.print('START');
-  }else if (Makey.BtnSET.wasReleased()) {
-    Makey.Lcd.print('SET');
-  } else if (Makey.BtnSET.wasReleasefor(700)) {
+  } else if (Makey.BtnMode.wasReleased()) {
+    Makey.Lcd.print('M');
+  }else if (Makey.BtnStart.wasReleased()) {
+    Makey.Lcd.print('S');
+  }else if (Makey.BtnSet.wasReleased()) {
+    Makey.Lcd.print('T');
+  } else if (Makey.BtnSet.wasReleasefor(700)) {
     Makey.Lcd.clear(BLACK);
-    Makey.Lcd.setCursor(0, 0);
+    Makey.Lcd.setCursor(0, 24);
   }
 }

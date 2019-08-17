@@ -101,6 +101,8 @@
     #include "utility/Button.h"
     #include "utility/I2CBus.h"
     #include "utility/BMI160.h"
+    #include "utility/BMI160Gen.h"
+    #include "utility/CurieIMU.h"
 
     class Makey32
     {
@@ -120,6 +122,8 @@
         // I2C
         I2CBus I2C = I2CBus();
 
+        //BMI160
+        BMI160GenClass IMU;
         // LCD
         #ifdef LCD_INSDE
         LCDDisplay Lcd = LCDDisplay();

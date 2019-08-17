@@ -80,7 +80,7 @@ void setup() {
   pinMode(LED, OUTPUT);
   Serial.println("Starting BLE work!");
   // Create the BLE Device
-  BLEDevice::init("Makey2");
+  BLEDevice::init("MakeyServer");
   //将BLE设备设置为服务器
   BLEServer *pServer = BLEDevice::createServer();
    pServer->setCallbacks(new MyServerCallbacks());
@@ -113,20 +113,27 @@ void setup() {
 void loop() {
   if (deviceConnected) {
     // Fabricate some arbitrary junk for now...
-    txValue = analogRead(readPin) / 3.456; // This could be an actual sensor reading!
+//     txValue = analogRead(readPin) / 3.456; // This could be an actual sensor reading!
 
-    // Let's convert the value to a char array:
-    char txString[8]; // make sure this is big enuffz
-    dtostrf(txValue, 1, 2, txString); // float_val, min_width, digits_after_decimal, char_buffer
+//     // Let's convert the value to a char array:
+//     char txString[8]; // make sure this is big enuffz
+//     dtostrf(txValue, 1, 2, txString); // float_val, min_width, digits_after_decimal, char_buffer
     
-//    pCharacteristic->setValue(&txValue, 1); // To send the integer value
-//    pCharacteristic->setValue("Hello!"); // Sending a test message
-    pCharacteristic->setValue(txString);
+// //    pCharacteristic->setValue(&txValue, 1); // To send the integer value
+// //    pCharacteristic->setValue("Hello!"); // Sending a test message
+//     pCharacteristic->setValue(txString);
     
-    pCharacteristic->notify(); // Send the value to the app!
-    Serial.print("*** Sent Value: ");
-    Serial.print(txString);
-    Serial.println(" ***");
+//     pCharacteristic->notify(); // Send the value to the app!
+//     Serial.print("*** Sent Value: ");
+//     Serial.print(txString);
+//     Serial.println(" ***");
+    Serial.println("MakeyServer connected.");
+    delay(5000);
   }
-  delay(1000);
+  else
+  {
+    delay(1000);
+    Serial.println("MakeyServer Disconnected.");
+  }
+  
 }

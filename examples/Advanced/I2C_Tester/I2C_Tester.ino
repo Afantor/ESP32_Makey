@@ -21,12 +21,9 @@ void setup()
   Makey.begin();
   Makey.Lcd.begin();
   Makey.Lcd.fillScreen( BLACK );
-  Makey.Lcd.setCursor(0, 0);
+  Makey.Lcd.setCursor(0, 14);
   Makey.Lcd.setTextColor(YELLOW);  
-  Makey.Lcd.setTextSize(2);
-
-  Makey.Lcd.fillScreen( BLACK );
-  Makey.Lcd.setCursor(0, 0);
+  Makey.Lcd.setTextSize(1);
   Makey.Lcd.println("Makey32 I2C Tester");
     
   Wire.begin();
@@ -41,7 +38,7 @@ void loop()
 {
   int address;
   int error;
-  Makey.Lcd.setCursor(0, 0);
+  Makey.Lcd.setCursor(0, 30);
   Makey.Lcd.println("scanning Address [HEX]");
   
   for(address = 1; address < 127; address++ ) 
@@ -50,7 +47,9 @@ void loop()
     error = Wire.endTransmission();
     if(error==0)
     {
-      Makey.Lcd.print(address,HEX);Makey.Lcd.print(" ");
+      Makey.Lcd.println("");
+      Makey.Lcd.print(" 0x");
+      Makey.Lcd.print(address,HEX);Makey.Lcd.println(" ");
     }
     else Makey.Lcd.print(".");
 
